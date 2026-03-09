@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Untuk Kamu ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.container{
+background:rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+max-width:700px;
+position:relative;
+z-index:2;
+}
+
+/* slider */
+
+.slider{
+width:260px;
+height:260px;
+margin:auto;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.slides{
+display:flex;
+width:780px;
+animation:slide 9s infinite;
+}
+
+.slides img{
+width:260px;
+height:260px;
+object-fit:cover;
+}
+
+@keyframes slide{
+0%{transform:translateX(0);}
+33%{transform:translateX(-260px);}
+66%{transform:translateX(-520px);}
+100%{transform:translateX(0);}
+}
+
+/* tombol */
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+margin:10px;
+}
+
+#yes{
+background:white;
+color:#ff4f81;
+}
+
+#no{
+background:#ff4f81;
+color:white;
+position:absolute;
+}
+
+/* hidden */
+
+.hidden{
+display:none;
+}
+
+/* hearts */
+
+.heart{
+position:absolute;
+font-size:20px;
+color:white;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
+}
+
+.signature{
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- musik -->
+<iframe id="music" width="0" height="0"
+src=""
+allow="autoplay">
+</iframe>
+
+<div class="container">
+
+<div id="question">
+
+<h2>Hai Sayang 🤍</h2>
+<h3>Apakah kamu sayang aku?</h3>
+
+<button id="yes" onclick="startLove()">Iya ❤️</button>
+<button id="no" onmouseover="runAway()">Tidak</button>
+
+</div>
+
+<div id="loveContent" class="hidden">
+
+<div class="slider">
+<div class="slides">
+
+<img src="DSC00113.JPG">
+<img src="DSC00115.JPG">
+<img src="DSC00121.JPG">
+
+</div>
+</div>
+
+<p style="margin-top:20px">
+
+hehehe tiba tiba banget ya? 
+aku mau ngomong sesuatu. 
+and first of all.. aku minta maaf yaa, aku minta maaf karna aku masih punya banyak kekurangan selama ini, masih banyak salahnya sama kamu, masih banyak ngambek, prengat prengut.. 
+sayang jujur aja untuk pertama kalinya aku mutusin untuk terima kamu di kehidupan aku itu hal yang bener bener aku pikirin dengan baik dan matang, kamu buat aku yakin dan percaya. dari kamu aku terus terusan belajar bahwa aku juga layak dicintai tanpa perlu jadi orang lain... 
+sayang satu satunya ketakutan aku adalah aku takut kamu ga merasakan rasa sayang aku dengan tulus.. 
+terlepas di masa depan yang kita gatau akan gimana.. aku cuma bisa bener bener berharap aku bisa support dan temenin kamu selalu, jadi orang yang akan selalu bangga dengan segala cara kamu berkembang. bakal banyak banget cobaan cobaan kita didepan, kita usahain dengan segala kekuatan kita ya?.. 
+sayang aku bener bener sayang sekali sama kamu, i hope ur my last destination...
+Ayo jatuh cinta setiap hari  
+sama orang yang sama. ❤️
+
+</p>
+
+<div class="signature">
+Dari pacarmu yg imup ❤️
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function runAway(){
+const btn=document.getElementById("no");
+btn.style.top=Math.random()*80+"vh";
+btn.style.left=Math.random()*80+"vw";
+}
+
+function startLove(){
+
+document.getElementById("question").style.display="none";
+document.getElementById("loveContent").classList.remove("hidden");
+
+document.getElementById("music").src =
+"https://www.youtube.com/embed/ZRMDxjRdJV8?autoplay=1&loop=1&playlist=ZRMDxjRdJV8";
+
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},5000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
